@@ -1,0 +1,206 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    position: relative;
+
+    &_head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24rem;
+
+        @include breakpoint-down(small){
+            gap: 20rem;
+        }
+
+        h1{
+            color: $white;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+    
+        img{
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &_cont{
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 6px;
+        padding: 1.3rem 1rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        margin-bottom: 1rem;
+        margin-top: 20px;
+        width: 50%;
+
+        @include breakpoint-down(small){
+            width: 100%;
+        }
+    }
+
+    &_btn{
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: 100ms ease-in-out;
+
+        &:hover{
+            border-color: $blue;
+        }
+    }
+
+    &_input{
+        flex: 1;
+        border: none;
+        outline: none;
+        // background: transparent;
+        font-size: 16px;
+        // color: inherit;
+    }
+
+    &_ul{
+        list-style: none;
+        border-radius: 6px;
+        width: 50%;
+        margin: 0;
+        padding: 0;
+         box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        background: white;
+
+        @include breakpoint-down(small){
+            width: 100%;
+        }
+
+        li{
+            border-bottom: 1px solid $light-Purple;
+
+            &.completed span{
+                opacity: 0.6;
+                color:$dark-Gray;
+                text-decoration: line-through;
+                cursor: pointer;
+            }
+        }
+
+        .todo-item{
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            transition: 0.3s;
+
+            .check-circle{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid $light-Purple;
+                cursor: pointer;
+                background: transparent;
+                margin-right: 10px;
+                transition:all 0.3s ease-in-out;
+                position: relative;
+                
+                &.checked{
+                    border: none; 
+                    background: linear-gradient(135deg, $start, $end);
+
+                    &::after{
+                        content:"";
+                        position: absolute;
+                        left: 4px;
+                        top: 2px;
+                        display: block;
+                        height: 12px;
+                        width: 12px;
+                        background: url(/images/icon-check.svg);
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        background-position: center;
+                        z-index: 3;
+                    }
+                }
+               
+            }
+        }
+
+        .delete-btn{
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 18px;
+            background: none;
+        }
+    }
+
+    &_foot{
+        width: 50%;
+        border-top: 1px solid $light-Purple;
+        border-radius: 6px;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        background: white;
+
+        @include breakpoint-down(small){
+           width: 100%;
+        }
+
+        button{
+            background: white;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    &_detail{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        
+        @include breakpoint-down(small){
+            display: flex;
+            
+        }
+    }
+
+    &_top{
+        display: flex;
+
+        .filter{
+            margin-right: 15px;
+
+            &.hover{
+                color: $white;
+            }
+
+            &.active{
+                color:$blue;
+            }
+        }
+  
+        @include breakpoint-down(small){
+            padding: 0.8rem 0;
+            margin-top: 20px;
+            border-radius: 6px;
+            width: 100%;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            background:$white;
+        }
+        
+
+    }
+}
